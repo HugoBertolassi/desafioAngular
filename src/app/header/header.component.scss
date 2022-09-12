@@ -1,0 +1,30 @@
+header{
+    width: 100%;
+    margin: auto;
+    background: #9BD2DE;
+    height:200px;
+    align-items: center;
+}
+.header{
+    width: 95%;
+    max-width: 1440px;
+    margin: auto;
+    background: #9BD2DE;
+    height:100%;
+    align-items: center;
+}
+p a{
+    margin-left:20px;
+    color: #4B2142;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+p a:hover{
+    color: #4B2142;
+    text-decoration: underline 1px solid #4B2142;
+}
+h2{
+    font-size: 25px;
+}
