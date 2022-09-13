@@ -1,23 +1,26 @@
 <app-header [titulo]="titulo"></app-header>
 <main class="flex-col ">
     <h2 class="txt-center">Cadastro</h2>
-    <section>
-        <div class="flex">
-            <div class="usuario-nome flex-col input">
+    <section class="flex-col">
+        <div class="flex left">
+            <div class="usuario-nome flex-col div-input">
                 <label for="nome">Nome</label>
                 <input type="text" name="Nome" class="inp">
             </div>
-            <div class="usuario-email flex-col input">
+            <div class="usuario-email flex-col div-input">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" class="inp">
             </div>
-            <div class="usuario-telefone flex-col input">
+            <div class="usuario-telefone flex-col div-input">
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" class="inp">
             </div>
+            
         </div>
         <button class="btn-cadastrar">Cadastrar</button>
+        
     </section>
+
     <section class="Usuarios">
         <!-- Tabela com dados -->
         <mat-form-field>
@@ -35,26 +38,27 @@
           
             <!-- email Column -->
             <ng-container matColumnDef="email">
-              <th mat-header-cell *matHeaderCellDef> </th>
+              <th mat-header-cell *matHeaderCellDef>E-mail </th>
               <td mat-cell *matCellDef="let element"> {{element.email}} </td>
             </ng-container>
           
             <!-- Symbol Column -->
             <ng-container matColumnDef="telefone">
-              <th mat-header-cell *matHeaderCellDef> </th>
+              <th mat-header-cell *matHeaderCellDef>Telefone</th>
               <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
             </ng-container>
             
             <!-- Botoes -->
             <ng-container matColumnDef="botao">
-                <th mat-header-cell *matHeaderCellDef></th>
+                <th mat-header-cell *matHeaderCellDef>botoes</th>
                 <td mat-cell *matCellDef="let element"> 
                     <button class="editar">editar</button>
                     <button class="excluir">excluir</button>
                 </td>
             </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <!-- Linha de cabeçalho-->
+            <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>  -->
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </section>

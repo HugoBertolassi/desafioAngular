@@ -1,9 +1,16 @@
 main{
     width: 100%;
+    max-width: 1080px;
     margin: auto;
     justify-content: center;
     align-items: center;
 }
+section{
+    width: 100%;
+    margin: auto;
+    
+}
+
 #LogoFilme{
     width:100px ;
 }
@@ -28,6 +35,15 @@ label{
     margin: 20px 0px;
 }
 
-section{
-    width: 100%;
+
+
+///Tratamento tabela
+//Sombreamento da tabela
+::ng-deep .mat-elevation-z8 {
+    box-shadow: 0px 0px 0px 0px;
 }
+
+//coluna de botao
+.mat-column-botao{
+     padding:6px 0px; 
+ }

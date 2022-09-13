@@ -4,10 +4,11 @@ header{
     background: #9BD2DE;
     height:200px;
     align-items: center;
+    margin-bottom: 35px;
 }
 .header{
     width: 95%;
-    max-width: 1440px;
+    max-width: 1080px;
     margin: auto;
     background: #9BD2DE;
     height:100%;
@@ -27,4 +28,7 @@ p a:hover{
 }
 h2{
     font-size: 25px;
+}
+#titulo{
+margin-top:20px;
 }

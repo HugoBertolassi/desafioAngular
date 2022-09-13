@@ -98,7 +98,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 }
 
+//////////////////////////////////////////////////Material
+/// 
 
+
+.input-border{
+    border:1px solid black !important;
+    caret-color: black;
+}
 
 //CSS TABELA
 /* Structure */
@@ -109,4 +116,20 @@ table {
 .mat-form-field {
     font-size: 14px;
     width: 100%;
+}
+
+//coluna de botao
+.mat-column-botao{
+    // background-color: blue;
+     height: 100%;
+     display:flex;
+     align-self: baseline;
+     align-items: center;
+     justify-content: right;
+     padding:6px 0px; 
+ }
+ 
+
+.mat-cell{
+    font-size: 20px;
 }

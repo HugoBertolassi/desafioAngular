@@ -2,12 +2,17 @@
   main{
     margin: auto;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1080px;
   }
 
-  .input{
-    margin-right: 20px;
+section{
+    width: 100%;
+    margin: 0px auto;
+}
+  .div-input{
+    margin-right: 30px;
     height: auto;
+  
    
   }
 
@@ -15,9 +20,32 @@
     width: 320px;
     height: 58px;
     border: 1px solid #000000;
+    font-size: 20px;
+    margin-top: 10px;
   }
 
 h2{
     font-size: 28px;
-    margin: 25px 0px;
 }
+
+label{
+    font-size: 20px;
+}
+
+.btn-cadastrar{
+    margin-bottom: 80px;
+}
+
+//tabela/////////////////////
+
+//Sombreamento da tabela
+::ng-deep .mat-elevation-z8 {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+//coluna de botao
+.mat-column-botao{
+     padding:6px 0px; 
+ }
+
+

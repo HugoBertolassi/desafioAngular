@@ -1,16 +1,29 @@
 <app-header [titulo]="titulo"></app-header>
 <main class="flex-col width100">
-    <section >
+    <section class="flex-col center">
         <h1>Gêneros</h1>
         <img id="logoTeatro" src="../../assets/img/Desafio5/theater 1.svg" alt="Mascaras de teatro">
     </section>
     <section class="flex">
-        <div class="inp flex-col ">
+        
+        <!-- <div class="inp flex-col ">
             <label for="cadastro-genero">Cadastrar Filmes</label>
             <input type="text" name="cadastro-genero"placeholder="Genero">
         </div>
+         -->
+        <form >
+            <mat-form-field >
+              <mat-label>Gênero</mat-label>
+              <input matInput [formControl]="generoFormControl" placeholder="Ex. Terror" class="input-border">
+              <mat-error *ngIf="generoFormControl.hasError('required')">
+                Este campo é <strong>obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+        </form>
+
         <button class="btn-salvar">Salvar</button>
     </section>
+    
     <section>
         <section class="width100">
             <!-- Tabela com dados -->
@@ -19,7 +32,7 @@
                     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
                 </mat-form-field>
                 
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table ">
                         <!-- nome filme Column -->
                         <ng-container matColumnDef="movie">
                         <th mat-header-cell *matHeaderCellDef> </th>
@@ -41,7 +54,7 @@
                             </td>
                         </ng-container>
         
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </section>

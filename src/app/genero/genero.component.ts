@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+
+import {FormControl, Validators} from '@angular/forms';
 
 
 //dados mattable
@@ -8,9 +10,13 @@ export interface Movie {
   genero: string;
 }
 const ELEMENT_DATA: Movie[] = [
-  {id_genero: '1',genero:'terror'} ,
-  {id_genero: '2',genero:'terror'} 
+  {id_genero: '1',genero:'Terror'} ,
+  {id_genero: '2',genero:'Drama'},
+  {id_genero: '3',genero:'Comedia'} 
 ];
+
+
+
 
 @Component({
   selector: 'app-genero',
@@ -35,5 +41,10 @@ export class GeneroComponent implements OnInit {
    console.log("filter")
  }
 
+
+ //codigo input
+ generoFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
 }

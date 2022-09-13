@@ -26,8 +26,10 @@ const ELEMENT_DATA: User[] = [
 export class UsuarioComponent implements OnInit {
 
   constructor() { }
+
   titulo=`Faça o Cadastro de usuários e edite, caso necessário.
   Pronto para cadastrar?`;
+  
   ngOnInit(): void {
   }
 
