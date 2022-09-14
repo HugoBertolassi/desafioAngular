@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 
 
@@ -43,4 +44,9 @@ export class FilmeComponent implements OnInit {
    this.dataSource.filter = filterValue.trim().toLowerCase();
    console.log("filter")
  }
+
+  //codigo input
+  textFieldFormControl = new FormControl('', [
+    Validators.required
+  ]);
 }

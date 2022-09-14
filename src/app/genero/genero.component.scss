@@ -5,7 +5,7 @@ main{
     align-items: center;
 }
 section{
-    width: 100%;
+    width: 95%;
     max-width: 1080px;
     
 }
@@ -17,10 +17,8 @@ section{
 }
 
 input{
-   
     height: 50px;
-    font-size: 20px;
-    
+    font-size: 20px;  
 }
 
 .div-input{
@@ -102,3 +100,15 @@ label{
 .mat-column-botao{
      padding:6px 0px; 
  }
+
+ 
+
+::ng-deep .mat-form-field{
+    width: 320px ;
+    font-size: 20px;
+}
+::ng-deep .ng-tns-c115-1{
+    //width: 1080px;
+    //max-width: 100%;
+    width: 100%;
+}

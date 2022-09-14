@@ -35,6 +35,9 @@ label{
     margin: 20px 0px;
 }
 
+.btn-salvar{
+    margin-top: 22px;
+}
 
 
 ///Tratamento tabela
@@ -47,3 +50,55 @@ label{
 .mat-column-botao{
      padding:6px 0px; 
  }
+
+
+//tabela/////////////////////
+
+//Sombreamento da tabela
+::ng-deep .mat-elevation-z8 {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+//coluna de botao
+.mat-column-botao{
+     padding:6px 0px; 
+ }
+
+//tratamento inputs materail
+.mat-form-field{
+    margin-right: 30px;
+    font-size: 20px;
+}
+ 
+::ng-deep  .mat-form-field.mat-focused .mat-form-field-label{ //campo focado
+    color: black;
+    font-size: 20px;  
+}
+
+
+//REtirar espaco entre o input e linha de status
+.mat-form-field-infix{
+    padding-top: 0,5em;
+    padding-bottom: 0em;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: .4375em 0;
+    padding-bottom: 0em;
+}
+
+.mat-select{
+    border: 1px solid black;
+    height: 50px;
+    width: 320px;
+}
+::ng-deep .mat-form-field{
+    width: 320px ;
+}
+::ng-deep .ng-tns-c115-3{
+    //width: 1080px;
+    //max-width: 100%;
+    width: 100%;
+}
+
+

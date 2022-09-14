@@ -3,7 +3,7 @@
     <h2 class="txt-center">Cadastro</h2>
     <section class="flex-col">
         <div class="flex left">
-            <div class="usuario-nome flex-col div-input">
+            <!-- <div class="usuario-nome flex-col div-input">
                 <label for="nome">Nome</label>
                 <input type="text" name="Nome" class="inp">
             </div>
@@ -15,7 +15,30 @@
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" class="inp">
             </div>
-            
+             -->
+            <form class="flex spc-between">
+                <mat-form-field >
+                    <mat-label>Nome</mat-label>
+                    <input matInput [formControl]="textFieldFormControl" placeholder="Ex. Joao das Neves" class="input-border inp">
+                    <mat-error *ngIf="textFieldFormControl.hasError('required')">
+                    Este campo é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>E-mail</mat-label>
+                    <input matInput [formControl]="textFieldFormControl" placeholder="Ex. joaodasneves@got.com" class="input-border inp">
+                    <mat-error *ngIf="textFieldFormControl.hasError('required')">
+                    Este campo é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Telefone</mat-label>
+                    <input matInput [formControl]="textFieldFormControl" placeholder="Ex. 55 11 30265201" class="input-border inp">
+                    <mat-error *ngIf="textFieldFormControl.hasError('required')">
+                    Este campo é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
         </div>
         <button class="btn-cadastrar">Cadastrar</button>
         

@@ -3,10 +3,19 @@
     <h2 >Filmes</h2>
     <img id="LogoFilme"src="../../assets/img/Desafio5/cinema 1.svg" alt="icone de filmes">
     <section class="flex div-input magin20px">
-        <div class="inp flex-col">
+        <!-- <div class="inp flex-col">
             <label for="cadastro-filme">Cadastrar Filmes</label>
             <input type="text" name="cadastro-filme"placeholder="Titulo do filme">
-        </div>
+        </div> -->
+        <form >
+            <mat-form-field >
+              <mat-label>Filme</mat-label>
+              <input matInput [formControl]="textFieldFormControl" placeholder="Ex. Terror" class="input-border">
+              <mat-error *ngIf="textFieldFormControl.hasError('required')">
+                Este campo é <strong>obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+        </form>
         
         <!-- Select -->
         <mat-form-field class="div-input width400px">

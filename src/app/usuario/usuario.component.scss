@@ -1,7 +1,7 @@
   //
   main{
     margin: auto;
-    width: 100%;
+    width: 95%;
     max-width: 1080px;
   }
 
@@ -9,20 +9,29 @@ section{
     width: 100%;
     margin: 0px auto;
 }
+
+input{
+    height: 50px;
+    font-size: 20px;  
+    margin-right: 35px;
+    //width: 320px !important;
+}
+
+
   .div-input{
     margin-right: 30px;
-    height: auto;
-  
+    height: auto; 
    
   }
 
-  .inp{
-    width: 320px;
-    height: 58px;
-    border: 1px solid #000000;
-    font-size: 20px;
-    margin-top: 10px;
-  }
+
+// .inp{
+//     //width: 320px !important;
+//     // height: 58px;
+//     // border: 1px solid #000000;
+//     // font-size: 20px;
+//     // margin-top: 10px;
+//   }
 
 h2{
     font-size: 28px;
@@ -36,6 +45,8 @@ label{
     margin-bottom: 80px;
 }
 
+
+
 //tabela/////////////////////
 
 //Sombreamento da tabela
@@ -48,4 +59,34 @@ label{
      padding:6px 0px; 
  }
 
+//tratamento inputs materail
+.mat-form-field{
+    margin-right: 30px;
+    font-size: 20px;
+}
+ 
+::ng-deep  .mat-form-field.mat-focused .mat-form-field-label{ //campo focado
+    color: black;
+    font-size: 20px;  
+}
 
+
+//REtirar espaco entre o input e linha de status
+.mat-form-field-infix{
+    padding-top: 0,5em;
+    padding-bottom: 0em;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: .4375em 0;
+    padding-bottom: 0em;
+}
+
+::ng-deep .mat-form-field{
+    width: 320px ;
+}
+::ng-deep .ng-tns-c115-3{
+    //width: 1080px;
+    //max-width: 100%;
+    width: 100%;
+}
