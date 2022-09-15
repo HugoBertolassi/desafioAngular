@@ -9,7 +9,7 @@ export interface Movie {
   id_genero:string;
   genero: string;
 }
-const ELEMENT_DATA: Movie[] = [
+let ELEMENT_DATA: Movie[] = [
   {id_genero: '1',genero:'Terror'} ,
   {id_genero: '2',genero:'Drama'},
   {id_genero: '3',genero:'Comedia'} 
@@ -46,5 +46,20 @@ export class GeneroComponent implements OnInit {
  generoFormControl = new FormControl('', [
     Validators.required
   ]);
+
+  public editarGenero(id:string){
+    console.log(id)
+  }
+
+  public adicionarGenero(id_genero:string,_genero: string){
+    //let genero1=_genero as genero;
+    // this.generoFormControl.value;
+    let genero=this.generoFormControl.value as string;
+    console.log(this.generoFormControl.value)
+    let elemento:Movie={id_genero,genero}
+     ELEMENT_DATA.push(elemento);
+     console.log(ELEMENT_DATA)
+  }
+
 
 }
