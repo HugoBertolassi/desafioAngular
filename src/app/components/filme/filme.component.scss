@@ -8,7 +8,7 @@ main{
 section{
     width: 100%;
     margin: auto;
-    
+
 }
 
 #LogoFilme{
@@ -19,7 +19,7 @@ input{
     width: 400px;
     height: 50px;
     font-size: 20px;
-    
+
 }
 
 .div-input{
@@ -48,7 +48,7 @@ label{
 
 //coluna de botao
 .mat-column-botao{
-     padding:6px 0px; 
+     padding:6px 0px;
  }
 
 
@@ -61,7 +61,7 @@ label{
 
 //coluna de botao
 .mat-column-botao{
-     padding:6px 0px; 
+     padding:6px 0px;
  }
 
 //tratamento inputs materail
@@ -69,10 +69,10 @@ label{
     margin-right: 30px;
     font-size: 20px;
 }
- 
+
 ::ng-deep  .mat-form-field.mat-focused .mat-form-field-label{ //campo focado
     color: black;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
 
@@ -102,3 +102,7 @@ label{
 }
 
 
+.filter
+{
+  width: 100%;
+}

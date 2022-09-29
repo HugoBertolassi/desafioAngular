@@ -26,8 +26,10 @@
 
     <section class="width100">
     <!-- Tabela com dados -->
-      <mat-form-field class="width100">
-          <mat-label>Filter</mat-label>
+      <mat-form-field class="width100 filter">
+          <mat-label> <mat-icon aria-hidden="true" aria-label="Pesquisar" fontIcon="search"></mat-icon>
+            Pesquisar Genero
+          </mat-label>
           <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" name="formGenero">
       </mat-form-field>
 

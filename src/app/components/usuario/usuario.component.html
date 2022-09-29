@@ -33,8 +33,10 @@
 
     <section class="Usuarios">
         <!-- Tabela com dados -->
-        <mat-form-field>
-            <mat-label>Filter</mat-label>
+        <mat-form-field class="filter">
+            <mat-label><mat-icon aria-hidden="true" aria-label="Pesquisar" fontIcon="search"></mat-icon>
+              Pesquisar Usuario
+            </mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
         </mat-form-field>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

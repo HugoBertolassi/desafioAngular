@@ -29,8 +29,10 @@
 
     <section class="width100">
       <!-- Tabela com dados -->
-        <mat-form-field class="width100">
-            <mat-label>Pesquisar Filme</mat-label>
+        <mat-form-field class="width100 filter">
+            <mat-label><mat-icon aria-hidden="true" aria-label="Pesquisar" fontIcon="search"></mat-icon>
+              Pesquisar Filme
+            </mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
         </mat-form-field>
 

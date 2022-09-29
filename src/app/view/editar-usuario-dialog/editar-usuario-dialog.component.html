@@ -34,7 +34,7 @@
     </mat-form-field>
   </form>
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions class="center">
   <button mat-button class="excluir" (click)="onNoClick()">Cancelar</button>
   <button mat-button class="editar" (click)="updateElement()" [ngClass]="{'BtnCadastrarDisable':!form.valid}" [disabled]="!form.valid">Atualizar</button>
   <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button> -->

@@ -10,6 +10,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FilmeComponent } from './components/filme/filme.component';
 import { GeneroComponent } from './components/genero/genero.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditarGeneroDialogComponent } from './view/editar-genero-dialog/editar-genero-dialog.component';
+import { EditarFilmeDialogComponent } from './view/editar-filme-dialog/editar-filme-dialog.component';
 
 //modulos material table
 import {MatTableModule} from '@angular/material/table';
@@ -30,8 +32,10 @@ import { EditarUsuarioDialogComponent } from './view/editar-usuario-dialog/edita
 //dialog
 import {MatDialogModule} from '@angular/material/dialog';
 
-import { EditarGeneroDialogComponent } from './view/editar-genero-dialog/editar-genero-dialog.component';
-import { EditarFilmeDialogComponent } from './view/editar-filme-dialog/editar-filme-dialog.component';
+
+
+//icon
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { EditarFilmeDialogComponent } from './view/editar-filme-dialog/editar-fi
     ReactiveFormsModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
 
 
   ],
