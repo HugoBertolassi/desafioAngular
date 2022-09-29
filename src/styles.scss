@@ -12,7 +12,7 @@ body{
 .flex-col{
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .spc-around{
@@ -20,7 +20,7 @@ body{
 }
 
 .spc-between{
-    
+
     justify-content: space-between;
 }
 
@@ -36,14 +36,19 @@ body{
     align-content: center;
     justify-content: center;
 }
-
+.wrap{
+  flex-wrap: wrap;
+}
 
 .width400px{
     width: 400px;
-    
+
 }
 .width100{
     width: 100%;
+}
+.width90{
+  width: 90%;
 }
 
 main{
@@ -99,7 +104,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 //////////////////////////////////////////////////Material
-/// 
+///
 
 
 .input-border{
@@ -112,7 +117,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 table {
     width: 100%;
 }
-  
+
 .mat-form-field {
     font-size: 14px;
     width: 100%;
@@ -126,10 +131,15 @@ table {
      align-self: baseline;
      align-items: center;
      justify-content: right;
-     padding:6px 0px; 
+     padding:6px 0px;
  }
- 
+
 
 .mat-cell{
     font-size: 20px;
+}
+
+.BtnCadastrarDisable
+{
+  background-color: #757575;
 }

@@ -1,0 +1,86 @@
+{
+  "usuario": [
+    {
+      "id": "2",
+      "name": "Hugo",
+      "email": "a@a",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "3",
+      "name": "a",
+      "email": "a@a",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "4",
+      "name": "Hugo Goncalves Bertolassi",
+      "email": "hugordura@gmail.com",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "5",
+      "name": "Hugo Goncalves Bertolassi",
+      "email": "hugordura@gmail.com",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "6",
+      "name": "Hugo Goncalves Bertolassi",
+      "email": "hugordura@gmail.com",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "12",
+      "name": "a",
+      "email": "a@a",
+      "telefone": ".+."
+    },
+    {
+      "id": "13",
+      "name": "a",
+      "email": "a@a",
+      "telefone": "67981259282"
+    },
+    {
+      "id": "14",
+      "name": "Santos",
+      "email": "thaisacrsantos@gmail.com",
+      "telefone": "6"
+    }
+  ],
+  "filme": [
+    {
+      "id": 1,
+      "nome": "Era do Gelo",
+      "id_genero": 5,
+      "genero": "Comedia Dramatica"
+    }
+  ],
+  "genero": [
+    {
+      "id": 1,
+      "genero": "Terror aterrorizante"
+    },
+    {
+      "id": 2,
+      "genero": "Comedia Risivel"
+    },
+    {
+      "id": 3,
+      "genero": "Comedia sem Sal"
+    },
+    {
+      "id": 4,
+      "genero": "Comedia do Adam Sandler"
+    },
+    {
+      "id": 5,
+      "genero": "Comedia Muitcho loca"
+    },
+    {
+      "id": 6,
+      "genero": "Comedia Dramatica"
+    }
+  ]
+}

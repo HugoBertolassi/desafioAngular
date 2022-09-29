@@ -7,7 +7,7 @@ main{
 section{
     width: 95%;
     max-width: 1080px;
-    
+
 }
 
 
@@ -18,7 +18,7 @@ section{
 
 input{
     height: 50px;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
 .div-input{
@@ -56,14 +56,14 @@ label{
 .ng-tns-c83-0{
      font-size: 20px;
      width: 400px;
-    
+
 }
 
 // .ng-tns-c83-0:focus{
 //     font-size: 20px;
 //     width: 400px;
 //     color: red;
-    
+
 // }
 
 
@@ -73,7 +73,7 @@ label{
 
 ::ng-deep  .mat-form-field.mat-focused .mat-form-field-label{ //campo focado
     color: black;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
 
@@ -98,10 +98,10 @@ label{
 
 //coluna de botao
 .mat-column-botao{
-     padding:6px 0px; 
+     padding:6px 0px;
  }
 
- 
+
 
 ::ng-deep .mat-form-field{
     width: 320px ;
@@ -111,4 +111,11 @@ label{
     //width: 1080px;
     //max-width: 100%;
     width: 100%;
+}
+
+
+//botao cadastrar
+.BtnCadastrarDisable
+{
+  background-color: #757575;
 }

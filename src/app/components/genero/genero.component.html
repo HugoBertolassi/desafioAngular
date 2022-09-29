@@ -1,0 +1,61 @@
+<app-header [titulo]="titulo"></app-header>
+<main class="flex-col width100">
+    <section class="flex-col center">
+        <h1>Gêneros</h1>
+        <img id="logoTeatro" src="../../assets/img/Desafio5/theater 1.svg" alt="Mascaras de teatro">
+    </section>
+    <section class="flex">
+
+        <!-- <div class="inp flex-col ">
+            <label for="cadastro-genero">Cadastrar Filmes</label>
+            <input type="text" name="cadastro-genero"placeholder="Genero">
+        </div>
+         -->
+        <form [formGroup]="formGenero">
+            <mat-form-field >
+              <mat-label>Gênero</mat-label>
+              <input matInput formControlName="generoForm"  placeholder="Ex. Terror" class="input-border" name="formGenero">
+              <mat-error *ngIf="formGenero.get('generoForm')?.hasError('required')">
+                Este campo é <strong>obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+        </form>
+
+        <button class="btn-salvar"(click)="salvarGenero()" [ngClass]="{'BtnCadastrarDisable':!formGenero.valid}" [disabled]="!formGenero.valid">Salvar</button>
+    </section>
+
+    <section class="width100">
+    <!-- Tabela com dados -->
+      <mat-form-field class="width100">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" name="formGenero">
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table ">
+        <!-- genero Column -->
+        <ng-container matColumnDef="genero">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
+        </ng-container>
+
+        <!-- Botoes -->
+        <ng-container matColumnDef="botao">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button class="editar"  (click)="editarGenero(element.id)">editar</button>
+            <button class="excluir" (click)="excluirGenero(element.id)">excluir</button>
+          </td>
+        </ng-container>
+
+        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator
+      [length]=indexTable
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Selecione a pagina do usuario">
+  </mat-paginator>
+    </section>
+</main>
+<app-footer></app-footer>

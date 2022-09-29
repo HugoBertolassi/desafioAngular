@@ -12,7 +12,7 @@ section{
 
 input{
     height: 50px;
-    font-size: 20px;  
+    font-size: 20px;
     margin-right: 35px;
     //width: 320px !important;
 }
@@ -20,8 +20,8 @@ input{
 
   .div-input{
     margin-right: 30px;
-    height: auto; 
-   
+    height: auto;
+
   }
 
 
@@ -56,7 +56,7 @@ label{
 
 //coluna de botao
 .mat-column-botao{
-     padding:6px 0px; 
+     padding:6px 0px;
  }
 
 //tratamento inputs materail
@@ -64,10 +64,10 @@ label{
     margin-right: 30px;
     font-size: 20px;
 }
- 
+
 ::ng-deep  .mat-form-field.mat-focused .mat-form-field-label{ //campo focado
     color: black;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
 
@@ -89,4 +89,10 @@ label{
     //width: 1080px;
     //max-width: 100%;
     width: 100%;
+}
+
+//botao cadastrar
+.BtnCadastrarDisable
+{
+  background-color: #757575;
 }

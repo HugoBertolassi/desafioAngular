@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FilmeComponent } from './filme/filme.component';
-import { GeneroComponent } from './genero/genero.component';
-import { HomeComponent } from './home/home.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { FilmeComponent } from './components/filme/filme.component';
+import { GeneroComponent } from './components/genero/genero.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home',pathMatch:'full'},
@@ -16,7 +16,7 @@ const routes: Routes = [
 
 
 
-  
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
