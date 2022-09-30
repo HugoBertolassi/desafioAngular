@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeralService {
+  private _loading =new BehaviorSubject<boolean>(false);
+  public readonly loading=this._loading.asObservable()
 
   constructor() { }
 
@@ -18,5 +21,14 @@ export class GeralService {
     maiorid++
     console.log(maiorid)
     return (maiorid).toString()
+  }
+
+
+  //loading
+  showLoading(){
+    this._loading.next(true)
+  }
+  hideLoading(){
+    this._loading.next(false)
   }
 }

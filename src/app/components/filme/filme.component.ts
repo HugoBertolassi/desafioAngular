@@ -9,6 +9,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { EditarFilmeDialogComponent } from 'src/app/view/editar-filme-dialog/editar-filme-dialog.component';
+import { GeralService } from 'src/app/service/geral-service/geral.service';
 
 
 
@@ -30,7 +31,7 @@ import { EditarFilmeDialogComponent } from 'src/app/view/editar-filme-dialog/edi
 })
 export class FilmeComponent implements OnInit {
   titulo="Cadastre os filmes de sua preferência"
-  loading=this.filmeService.loading;
+  loading=this.geralService.loading;
   error="Erro ao pegar os dados"
   dataSource!:MatTableDataSource<FilmeInterface>;
   index:number=0;
@@ -43,8 +44,8 @@ export class FilmeComponent implements OnInit {
     private formBuilder:FormBuilder,
     private filmeService:FilmeService,
     private generoService:GeneroService,
-    public dialog: MatDialog
-
+    public dialog: MatDialog,
+    private geralService:GeralService
   ) {}
 
   ngOnInit(): void {
@@ -86,12 +87,12 @@ export class FilmeComponent implements OnInit {
   ///////////////////////////////////
   //CRUD
   salvarFilme(){
+    this.geralService.showLoading()
     //const id=this.filmes[(this.filmes.length)-1].id+1;
     const id=this.nextID()
     const nom1=this.form.controls['genderSelect'].value;
     //const id_genero=
-
-    this.createGeneroFilmeData()
+    //this.createGeneroFilmeData()
    // console.log(nom1)
     const filme:FilmeInterface={
       id: id,
@@ -101,10 +102,12 @@ export class FilmeComponent implements OnInit {
 
     this.filmeService.salvarFilme(filme).subscribe({
       next:()=>{
+        this.geralService.hideLoading();
         this.ngOnInit();
       },
       error:()=>{
-        console.log("erro ao salvar filme")
+        console.log("erro ao salvar filme");
+        this.geralService.hideLoading();
       }
     })
   }
@@ -120,14 +123,17 @@ export class FilmeComponent implements OnInit {
   }
 
   excluirFilme(id:number){
+    this.geralService.showLoading()
     this.filmeService.excluirFilme(id).subscribe({
       next:()=>{
         console.log("excluiu");
-        this.createGeneroFilmeData()
+        this.createGeneroFilmeData();
         this.ngOnInit();
+        this.geralService.hideLoading();
       },
       error:()=>{
         console.log("erro ao excluir filme");
+        this.geralService.hideLoading();
       }
     })
   }
@@ -232,9 +238,11 @@ export class FilmeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(element => {
       if(element){
+        this.geralService.showLoading()
         this.filmeService.updateFilme(element).subscribe({
           next:()=>{
             this.ngOnInit()
+            this.geralService.hideLoading()
         },
           error:()=>{
             alert("Erro ao salvar filme")

@@ -32,11 +32,11 @@ import { EditarUsuarioDialogComponent } from './view/editar-usuario-dialog/edita
 //dialog
 import {MatDialogModule} from '@angular/material/dialog';
 
-
-
 //icon
 import {MatIconModule} from '@angular/material/icon';
 
+//spiner de atualizaçao
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +62,8 @@ import {MatIconModule} from '@angular/material/icon';
     HttpClientModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
 
 
   ],

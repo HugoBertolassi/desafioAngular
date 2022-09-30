@@ -8,6 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { EditarGeneroDialogComponent } from 'src/app/view/editar-genero-dialog/editar-genero-dialog.component';
+import { GeralService } from 'src/app/service/geral-service/geral.service';
 
 
 //dados mattable
@@ -33,11 +34,13 @@ export class GeneroComponent implements OnInit {
   generos:GeneroInterface[]=[];
   indexTable:number=0;
   public formGenero!:FormGroup;
-  
+  loading=this.geralService.loading;
+
   constructor(
     private formBuilder:FormBuilder,
     private generoService:GeneroService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private geralService:GeralService
 
   ) { }
 
@@ -81,6 +84,7 @@ export class GeneroComponent implements OnInit {
 //////////////////////////////////////////////
 //funcao CRUD
 salvarGenero(){
+    this.geralService.showLoading()
     //const id=this.generos[(this.generos.length)-1].id+1;
     const id=this.nextID()
     const genero:GeneroInterface={
@@ -92,9 +96,11 @@ salvarGenero(){
       next:()=> {//nao precisa pegar parametro poque o metodo ja faz isso
 
         this.ngOnInit()
+        this.geralService.hideLoading()
       },
       error:()=>{
         console.log('falha')
+        this.geralService.hideLoading()
       }
     })
 }
@@ -104,13 +110,16 @@ this.openDialog(id);
 
 
 excluirGenero(id:number){
+  this.geralService.showLoading()
   this.generoService.excluirgenero(id).subscribe({
     next:()=>{
       console.log("excluiu");
       this.ngOnInit();
+      this.geralService.hideLoading()
     },
     error:()=>{
       console.log("erro ao excluir");
+      this.geralService.hideLoading()
     }
   })
 }
@@ -133,12 +142,15 @@ openDialog(id:number): void {
      //receber fechamento do dialog
      dialogRef.afterClosed().subscribe(element => {
       if(element){//tratamento de erro de retrno do close sem dados
+        this.geralService.showLoading()
         this.generoService.updategenero(element).subscribe({
           next:()=>{
-             this.ngOnInit()
+             this.ngOnInit();
+             this.geralService.hideLoading();
           },
           error:()=>{
              alert("Erro ao salvar genero")
+             this.geralService.hideLoading();
           }
         })
       }

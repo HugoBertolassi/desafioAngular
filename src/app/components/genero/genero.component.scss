@@ -124,3 +124,22 @@ label{
 {
   width: 100%;
 }
+
+
+//spinner
+::ng-deep  .mat-spinner circle {
+  stroke: #F6511D !important;;
+ }
+ :host ::ng-deep {
+   stroke:#F6511D !important;
+ }
+
+ ::ng-deep .mat-form-field.mat-focused .mat-form-field-label{
+    color:#F6511D !important;
+   //color:#fff !important;
+  }
+
+ ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+   background-color: #F6511D !important;
+   //background-color: #000 !important;
+ }

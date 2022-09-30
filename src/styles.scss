@@ -148,3 +148,39 @@ table {
 {
   background-color: #757575;
 }
+
+
+//spinner
+::ng-deep  .mat-spinner circle {
+  stroke: #F6511D !important;;
+ }
+ :host ::ng-deep {
+   stroke:#F6511D !important;
+ }
+
+ ::ng-deep .mat-form-field.mat-focused .mat-form-field-label{
+    color:#F6511D !important;
+   //color:#fff !important;
+  }
+
+ ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+   background-color: #F6511D !important;
+   //background-color: #000 !important;
+ }
+
+ .spinner{
+  color:#F6511D;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100%;
+  top:0;
+  z-index: 998;
+  background-color: rgba(0,0,0,0.3);
+}
+
+::ng-deep  .mat-spinner {
+  background-color: rgba(0,0,0,0) !important;;
+}

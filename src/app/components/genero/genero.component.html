@@ -60,4 +60,7 @@
   </mat-paginator>
     </section>
 </main>
+<div class="spinner" *ngIf="loading | async">
+  <mat-spinner  ProgressSpinnerMode = 'indeterminate'></mat-spinner>
+</div>
 <app-footer></app-footer>

@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 
 import {MatTableDataSource} from '@angular/material/table';
 import { User } from 'src/app/interface/usuario.interface';
+import { GeralService } from 'src/app/service/geral-service/geral.service';
 import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 import { EditarUsuarioDialogComponent } from 'src/app/view/editar-usuario-dialog/editar-usuario-dialog.component';
 
@@ -30,21 +31,21 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
   form!:FormGroup;
   titulo=`Faça o Cadastro de usuários e edite, caso necessário.
   Pronto para cadastrar?`;
-  loading=this.usuarioService.loading;
+
   usuarios:User[]=[]
   error="Erro ao pegar os dados"
   @ViewChild(MatPaginator) paginator!: MatPaginator
   dataSource!:MatTableDataSource<User>;
 
   index:number=0;
-
+  loading=this.geralService.loading;
 
 
   constructor(
    private formBuilder:FormBuilder,
    private usuarioService:UsuarioService,
-   public dialog: MatDialog
-
+   public dialog: MatDialog,
+   private geralService:GeralService
    ) {
     }
 
@@ -68,6 +69,7 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
   }
 
   salvarUsuario(){
+    this.geralService.showLoading()
     let id=this.nextID()
     // const id=this.usuarios[(this.usuarios.length)-1].id+1;
     const usuario:User={
@@ -79,10 +81,13 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
 
     this.usuarioService.salvarUsuario(usuario).subscribe({
       next:()=> {//nao precisa pegar parametro poque o metodo ja faz isso
+
         this.ngOnInit()
+        this.geralService.hideLoading();
       },
       error:()=>{
         console.log('falha')
+        this.geralService.hideLoading();
       }
     })
   }
@@ -90,13 +95,16 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
 
 
   excluirUsuario(id:number){
+    this.geralService.showLoading()
     this.usuarioService.excluirUsuario(id).subscribe({
       next:()=>{
         console.log("excluiu");
         this.ngOnInit();
+        this.geralService.hideLoading();
       },
       error:()=>{
         console.log("erro ao excluir bolo");
+        this.geralService.hideLoading();
 
       }
     })
@@ -115,6 +123,7 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
       return ''
     }
   }
+
   nextID(){
     let maiorid=0
     console.log(this.usuarios.length)
@@ -172,11 +181,15 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
         //receber fechamento do dialog
         dialogRef.afterClosed().subscribe(element => {
           if(element){
+            this.geralService.showLoading()
             this.usuarioService.updateUsuario(element).subscribe({
               next:()=>{
-                 this.ngOnInit()
+                this.geralService.hideLoading()
+                this.ngOnInit()
+
               },
               error:()=>{
+                this.geralService.hideLoading()
                  alert("Erro ao salvar usuario")
               }
             })
