@@ -8,7 +8,8 @@ import { GeneroInterface } from 'src/app/interface/genero.interface';
 })
 export class GeneroService {
   private listaGenero:any;
-  private url="http://localhost:3000/genero";
+  //private url="http://localhost:3000/genero";
+  private url="https://63365cf28aa85b7c5d2b79ff.mockapi.io/desafio/genero";
   loading: any;
 
   constructor(

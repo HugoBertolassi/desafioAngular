@@ -1,18 +1,16 @@
 {
-  "usuario": [
-    {
-      "id": "1",
-      "name": "a",
-      "email": "a@a",
-      "telefone": "1111"
-    }
-  ],
+  "usuario": [],
   "filme": [
     {
       "id": 1,
       "nome": "Era do Gelo",
       "id_genero": 5,
       "genero": "Comedia Dramatica"
+    },
+    {
+      "id": 2,
+      "nome": "assa",
+      "id_genero": 1
     }
   ],
   "genero": [

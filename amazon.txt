@@ -1,0 +1,25 @@
+Amazon S3-simple storage service para rodar bff
+-Armazena os dados é o sevidor principal
+
+CLoud Front
+-é um cache para agilizar a respostado site serve como um site mais perto
+
+Amazon route 53
+-serve como um dns
+
+
+aws certificate Manager
+-certificado de acesso por questao de seguranca
+
+
+
+S3
+-Criar bucket
+-em propriedade do bucket
+	habilitar site estatico
+-em permissoes>politica do bucket
+	liberar o acesso criando politica de acesso
+	para a leitura de usuario anonimo
+	em saiba mais> selecione bucket policy examplesÇ read only
+--pegar o build do ng e upar na pagina
+

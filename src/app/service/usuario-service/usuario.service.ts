@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
   private listaUsuario:any;
-  private url="http://localhost:3000/usuario";
+  //private url="http://localhost:3000/usuario";
+  private url="https://63365cf28aa85b7c5d2b79ff.mockapi.io/desafio/usuario";
   loading: any;
   //private usuario:UsuarioInterface;
 

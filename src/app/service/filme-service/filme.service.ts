@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 export class FilmeService {
 
   private listaFilme:any;
-  private url="http://localhost:3000/filme";
+  //private url="http://localhost:3000/filme";
+  private url="https://63365cf28aa85b7c5d2b79ff.mockapi.io/desafio/filme";
   loading: any;
 
   constructor(

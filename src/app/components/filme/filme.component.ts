@@ -160,8 +160,8 @@ export class FilmeComponent implements OnInit {
 
    // observer.next( ()=>{
       console.log("inicindo observable")
-      console.log(this.filmes)
-      console.log(this.generos)
+     // console.log(this.filmes)
+     // console.log(this.generos)
       this.filmeGenero=[];
       for(let i=0; i<this.filmes.length;i++){
         console.log(this.filmes[i].id_genero)
@@ -237,7 +237,7 @@ export class FilmeComponent implements OnInit {
             this.ngOnInit()
         },
           error:()=>{
-            alert("Erro ao salvar usuario")
+            alert("Erro ao salvar filme")
           }
         })
       }
