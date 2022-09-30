@@ -42,7 +42,7 @@ export class GeneroService {
 
   updategenero(objeto:GeneroInterface):Observable<GeneroInterface>{
     let endpoint=objeto.id;
-    console.log(`${this.url}/${endpoint}`,objeto)
+   // console.log(`${this.url}/${endpoint}`,objeto)
     return this.httpClient.put<GeneroInterface>(`${this.url}/${endpoint}`,objeto)
   }
 }

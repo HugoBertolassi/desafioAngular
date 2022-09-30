@@ -74,11 +74,12 @@ export class GeneroComponent implements OnInit {
  }
  @ViewChild(MatPaginator) paginator!: MatPaginator
  ngAfterViewInit() {
-   this.dataSource.paginator = this.paginator;
+  //this.dataSource.paginator = this.paginator;
  }
  atualizaTable(){
   this.dataSource = new MatTableDataSource(this.generos);//atualizar a tabelathis.dataSource = new MatTableDataSource(this.usuarios);//atualizar a tabela
   this.indexTable=this.generos.length;
+  this.dataSource.paginator = this.paginator;
   this.ngAfterViewInit()
 }
 //////////////////////////////////////////////

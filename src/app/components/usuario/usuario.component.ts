@@ -126,14 +126,14 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
 
   nextID(){
     let maiorid=0
-    console.log(this.usuarios.length)
+    //console.log(this.usuarios.length)
     for(let i=0;i<this.usuarios.length;i++){
       if(Number(this.usuarios[i].id)> maiorid){
         maiorid=Number(this.usuarios[i].id)
       }
     }
     maiorid++
-    console.log(maiorid)
+    //console.log(maiorid)
     return (maiorid).toString()
   }
 
@@ -153,12 +153,13 @@ export class UsuarioComponent implements OnInit,AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+
   }
 
   atualizaTable(){
     this.dataSource = new MatTableDataSource(this.usuarios);//atualizar a tabelathis.dataSource = new MatTableDataSource(this.usuarios);//atualizar a tabela
     this.index=this.usuarios.length;
+    this.dataSource.paginator = this.paginator;
     this.ngAfterViewInit()
   }
 

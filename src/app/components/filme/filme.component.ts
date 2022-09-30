@@ -164,13 +164,11 @@ export class FilmeComponent implements OnInit {
    createGeneroFilmeData2=new Observable(()=>{
     //link para cmo criar obsevable https://www.koderhq.com/tutorial/angular/observable/#:~:text=The%20simplest%20way%20to%20create%20an%20observable%20in,can%20be%20a%20reference%20to%20a%20standalone%20function.
 
-   // observer.next( ()=>{
-      console.log("inicindo observable")
-     // console.log(this.filmes)
-     // console.log(this.generos)
+      //console.log("inicindo observable")
+
       this.filmeGenero=[];
       for(let i=0; i<this.filmes.length;i++){
-        console.log(this.filmes[i].id_genero)
+        //console.log(this.filmes[i].id_genero)
         this.generoService.lerGenerosById(this.filmes[i].id_genero).subscribe({
           next:(object:GeneroInterface)=>{
             let genero={genero:object.genero}
@@ -184,8 +182,6 @@ export class FilmeComponent implements OnInit {
           }
         })
       }
-      console.log("dentro for")
-   // })
   })
 
   //Opcoes de genero
@@ -208,13 +204,14 @@ export class FilmeComponent implements OnInit {
 
  @ViewChild(MatPaginator) paginator!: MatPaginator
  ngAfterViewInit() {
-   this.dataSource.paginator = this.paginator;
+  // this.dataSource.paginator = this.paginator;
  }
 
  atualizaTable(){
    //this.dataSource = new MatTableDataSource(this.filmes);//atualizar a tabelathis.dataSource = new MatTableDataSource(this.usuarios);//atualizar a tabela
    this.dataSource = new MatTableDataSource(this.filmeGenero);//atualizar a tabelathis.dataSource = new MatTableDataSource(this.usuarios);//atualizar a tabela
    this.index=this.filmes.length;
+   this.dataSource.paginator = this.paginator;
    this.ngAfterViewInit()
  }
 
